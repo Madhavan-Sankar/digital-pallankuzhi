@@ -24,8 +24,9 @@ public class winner extends AppCompatActivity {
 
     int end;
     String roomid,player1,player2,win,ipaddress;
-    TextView winner;
+    TextView winner,statuswin;
     Button again,leaderboard;
+    int value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,25 +37,32 @@ public class winner extends AppCompatActivity {
         end = Integer.parseInt(bundle.getString("end"));
         player1 = bundle.getString("player1");
         player2 = bundle.getString("player2");
+        value = Integer.parseInt(bundle.getString("value"));
         again=findViewById(R.id.again);
         leaderboard=findViewById(R.id.leaderboard);
         player1=player1.replace("%20"," ");
         player2=player2.replace("%20"," ");
         winner=findViewById(R.id.winner);
+        statuswin=findViewById(R.id.statuswin);
         if(end==1) {
-            winner.setText(player1 + " is the winner");
+            winner.setText(player1);
             win=player1;
-            writewinner();
+            if(value==1)
+                writewinner();
         }
         else if(end==2) {
-            winner.setText(player2 + " is the winner");
+            winner.setText(player2);
             win = player2;
-            writewinner();
+            if(value==2)
+                writewinner();
         }
         else {
-            winner.setText("DRAW");
-            win="DRAW";
-            writewinner();
+            winner.setText("");
+            statuswin.setText("THE MATCH IS DRAW");
+            win = "DRAW";
+            if(value==1) {
+                writewinner();
+            }
         }
         again.setOnClickListener(new View.OnClickListener() {
             @Override

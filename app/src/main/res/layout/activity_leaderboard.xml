@@ -6,60 +6,71 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="#B7C8E4"
     tools:context=".leaderboard">
 
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:text="LEADERBOARD"/>
-    <LinearLayout
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/leaderboard2"/>
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        android:weightSum="100"
-        android:layout_marginTop="15dp"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PLAYER 1"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_weight="30"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PLAYER 2"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_weight="30"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RESULT"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_weight="40"/>
-    </LinearLayout>
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="11dp"
+        android:layout_height="400dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAYER 1"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/purple"
+                android:layout_weight="30"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAYER 2"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/purple"
+                android:layout_weight="30"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESULT"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/purple"
+                android:layout_weight="40"/>
+        </LinearLayout>
 
-    <ListView
-        android:paddingTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listview"
-
-        android:layout_weight="100"/>
-
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="100"
+            android:paddingTop="10dp" />
+    </androidx.cardview.widget.CardView>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:id="@+id/back"
         android:layout_marginTop="20dp"
+        android:background="@drawable/shape1"
         android:layout_marginBottom="10dp"
-        android:text="BACK"/>
+        android:text="BACK TO HOME"/>
 </LinearLayout>

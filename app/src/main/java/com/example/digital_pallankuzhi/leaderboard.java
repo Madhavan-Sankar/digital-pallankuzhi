@@ -9,6 +9,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +44,8 @@ public class leaderboard extends AppCompatActivity {
         setContentView(R.layout.activity_leaderboard);
         back=findViewById(R.id.back);
         mListView=findViewById(R.id.listview);
+        mListView.setDivider(null);
+        mListView.setSelector(new ColorDrawable(Color.TRANSPARENT));
         String ipaddress = "https://pallankuli.000webhostapp.com";
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +54,6 @@ public class leaderboard extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, ipaddress+"/leaderboard.php",
                 new Response.Listener<String>() {
                     @Override

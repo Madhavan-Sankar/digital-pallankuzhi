@@ -5,27 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/yellow"
     android:orientation="vertical"
     tools:context=".winner">
 
     <TextView
-        android:layout_marginBottom="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/winner"
-        android:textSize="30dp"
-        android:text="Nothing written"/>
-
-    <Button
+        android:text="HURRAY"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginBottom="30dp"
+        android:textColor="#6034DA"/>
+    <RelativeLayout
         android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THE WINNER IS"
+            android:id="@+id/statuswin"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="25dp"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@drawable/dancing1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/winner"
+            android:textSize="30dp"
+            android:layout_marginTop="430dp"
+            android:textAlignment="center"
+            android:text="Nothing written"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gif6"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/again"
-        android:layout_marginBottom="30dp"
-        android:text="PLAY AGAIN"/>
+        android:textColor="@color/white"
+        android:background="@drawable/shape2"
+        android:text="BACK TO HOME"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/leaderboard"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/white"
+        android:background="@drawable/shape2"
         android:text="LEADEROARD"/>
 
+    </LinearLayout>
 </LinearLayout>

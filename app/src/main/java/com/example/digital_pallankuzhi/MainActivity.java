@@ -34,13 +34,14 @@ public class MainActivity extends AppCompatActivity {
     Button create,join;
     String roomid;
     ProgressBar progressBar;
-    int count=0;
+    private static long back_pressed;
     private static final String ALPHA_NUMERIC_STRING = "0123456789abcdefghijklmnopqrstuvwxyz";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //internet
         //        http://192.168.0.112/digital_pallankuzhi
         //        https://pallankuli.000webhostapp.com
         //        http://digitalpallankuzhi.epizy.com  (epizy)
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please enter a name!", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             PutData putData = new PutData(ipaddress+"/write.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
+                                    progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if(result.equals("Written Successfully!!"))
                                     {
@@ -170,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else
                             {
+                                progressBar.setVisibility(View.VISIBLE);
                                 Handler handler = new Handler(Looper.getMainLooper());
                                 handler.post(new Runnable() {
                                     @Override
@@ -184,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
                                         PutData putData = new PutData(ipaddress+ "/check.php", "POST", field, data);
                                         if (putData.startPut()) {
                                             if (putData.onComplete()) {
+                                                progressBar.setVisibility(View.GONE);
                                                 String result = putData.getResult();
                                                 if (!result.equals("Checked!")) {
                                                     Toast.makeText(MainActivity.this, result, LENGTH_SHORT).show();
@@ -256,16 +261,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(count==0)
-        {
-            Toast.makeText(this, "Press again to exit!!", LENGTH_SHORT).show();
+        if (back_pressed + 2000 > System.currentTimeMillis()) {
+            finishAffinity();
+        } else {
+            Toast.makeText(getBaseContext(), "Press once again to exit",
+                    Toast.LENGTH_SHORT).show();
+            back_pressed = System.currentTimeMillis();
         }
-        else
-        {
-            MainActivity.this.finish();
-            System.exit(0);
-        }
-        count++;
     }
 
     private void hideKeyboard() {

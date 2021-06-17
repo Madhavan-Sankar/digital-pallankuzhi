@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="top"
-    android:orientation="vertical">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/room_id"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:singleLine="true"
-        android:hint="ROOM ID"/>
-
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:elevation="11dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#A0ADF8">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:weightSum="1"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submit"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimary"
-            android:text="SUBMIT"/>
-        <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/room_id"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:background="#B3FFFFFF"
+            android:singleLine="true"
+            android:hint="ROOM ID"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cancel"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimary"
-            android:layout_marginLeft="100dp"
-            android:text="CANCEL"/>
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancel"
+                android:textColor="@color/white"
+                android:background="@drawable/shapecancel"
+                android:text="CANCEL"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit"
+                android:textColor="@color/white"
+                android:background="@drawable/shapesubmit"
+                android:layout_marginLeft="100dp"
+                android:text="SUBMIT"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.cardview.widget.CardView>

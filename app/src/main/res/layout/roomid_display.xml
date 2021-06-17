@@ -1,69 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1"
-    android:gravity="top"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginBottom="20dp"
-        android:text="ROOM ID"/>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:elevation="11dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#A0ADF8">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:weightSum="1"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+        android:gravity="top"
+        android:orientation="vertical">
+
         <TextView
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="100px"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/montserrat"
+            android:background="#B3FFFFFF"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/room_id"
-            android:gravity="center" />
+            android:text="ROOM ID"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/room_id"
+                android:text="hii"
+                android:textSize="20dp"
+                android:gravity="center" />
 
-        <ImageButton
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:src="@drawable/ic_baseline_share_24"
-            android:layout_weight="0"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/share"
-            android:background="@color/colorPrimary"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:weightSum="1"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:layout_width="100px"
+                android:layout_height="100px"
+                android:src="@drawable/ic_baseline_share_24"
+                android:layout_weight="0"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/share"
+                android:background="@drawable/shape1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submit"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimary"
-            android:text="SUBMIT"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cancel"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimary"
-            android:layout_marginLeft="100dp"
-            android:text="CANCEL"/>
+            android:gravity="center"
+            android:weightSum="1"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancel"
+                android:textColor="@color/white"
+                android:background="@drawable/shapecancel"
+                android:text="CANCEL"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit"
+                android:textColor="@color/white"
+                android:background="@drawable/shapesubmit"
+                android:layout_marginLeft="100dp"
+                android:text="SUBMIT"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.cardview.widget.CardView>

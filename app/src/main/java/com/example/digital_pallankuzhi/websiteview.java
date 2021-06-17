@@ -53,7 +53,7 @@ public class websiteview extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_websiteview);
-        Bundle bundle = getIntent().getExtras();
+        final Bundle bundle = getIntent().getExtras();
         roomid = bundle.getString("roomid");
         value = bundle.getString("value");
         ipaddress = ((IpAddress) this.getApplication()).getIp();
@@ -89,7 +89,6 @@ public class websiteview extends AppCompatActivity{
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 String res=url.substring(url.length() - 6);
-                Toast.makeText(websiteview.this, ""+url, LENGTH_SHORT).show();
                 if(res.equals("end=_1") || res.equals("end=_2") || res.equals("end=_3")) {
                     Bundle bundle1 = new Bundle();
                     String[] arrSplit = url.split("_");
@@ -97,6 +96,7 @@ public class websiteview extends AppCompatActivity{
                     bundle1.putString("player2",arrSplit[3]);
                     bundle1.putString("end",arrSplit[5]);
                     bundle1.putString("roomid", roomid);
+                    bundle1.putString("value",value);
                     if (url.substring(url.length() - 1).equals("1")) {
                         bundle1.putString("end", "1");
                     } else if (url.substring(url.length() - 1).equals("2")) {
